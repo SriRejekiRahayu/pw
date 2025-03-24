@@ -1,62 +1,137 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 <head>
-  <title> Pertemuan 2 HTML dasar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="date"],
+        input[type="file"],
+        input[type="search"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #6a11cb;
+        }
+        .profile-pic {
+            display: block;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        @media (max-width: 600px) {
+            body {
+                height: auto;
+                padding: 20px;
+            }
+            .container {
+                width: 95%;
+            }
+            input, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
-  <body>
-<header><a href="ipwija.ac.id"> Home </a></header>
-<main> hi 
-<br/> 
-</main id="main" class="main">    
-<section>Halo Word</section>
-
-    <section id="gambar">
-    <img src="edu.png" height="200" width="200">  
-    </section>
-
-    <section id="form">
-      <form>
-<label>Username:</label><input type="text">
-<label>Password:</label><input type="password">
-<label>Warna:</label><input type="color">
-<label>Dropdown:</label>
-        <select>
-          <option>1</option>
-          <option>2</option>
-        </select>
-<input type="submit" value="cancel">
-        <button> login</button>
-      </form>
-    </section>
-
-    <section id="paragraf">
-<p>
-<h1> Pertemuan 2</h1>  
-<h2> HTML dasar </h2>
-pertemuan 2, dasar HTML membuat paragraf <br/> sederhana dengan huruf <i>miring </i>,<b>Tebal</b>
-</p>
-  <ul>
-    <li>1</li>
-    <li>2</li>
-  </ul>
-  <ol>
-    <li>satu</li>
-    <li>dua</li>
-  </ol>
-</section>
-<section id="table">
-<h2>table</h2>
-<table border="1">
-<thead>
-  <tr><th>jan </th><th>feb </th></tr>
-</thead>  
-<tbody>
-<tr><td>1 </td><td>2 </td></tr>
-<tr><td>3 </td><td>4 </td></tr>
-</tbody>
-</table>
-</section>
-
-        
-<footer>@2025</footer>    
-  </body>
+<body>
+    <div class="container">
+        <h2>Formulir Pendaftaran</h2>
+        <img src="rumah_jual_1.jpeg" alt="Foto Profil" width="100" height="100" class="profile-pic">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Tanggal Lahir:</label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-group">
+                <label for="file">Upload Dokumen:</label>
+                <input type="file" id="file" name="file">
+            </div>
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <label><input type="radio" id="male" name="gender" value="Laki-laki"> Laki-laki</label>
+                    <label><input type="radio" id="female" name="gender" value="Perempuan"> Perempuan</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Hobi:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="music" name="hobby" value="Musik"> Musik</label>
+                    <label><input type="checkbox" id="sports" name="hobby" value="Olahraga"> Olahraga</label>
+                    <label><input type="checkbox" id="reading" name="hobby" value="Membaca"> Membaca</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="search">Cari:</label>
+                <input type="search" id="search" name="search">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
 </html>
