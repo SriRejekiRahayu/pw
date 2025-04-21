@@ -3,26 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript & DOM (Document Object Model)</title>
+    <title>Pemahaman JavaScript & DOM</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
-        h1 { color: #2980b9; }
-        .box { width: 100px; height: 100px; background-color: #3498db; margin: 10px; }
-        button { padding: 10px 20px; border: none; background-color: #2ecc71; color: white; cursor: pointer; }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #34495e; }
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+            margin: 20px 0;
+            transition: 0.3s;
+        }
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>JavaScript & DOM (Document Object Model)</h1>
-    <p>Contoh manipulasi DOM dengan JavaScript:</p>
+
+    <h1>Belajar JavaScript & DOM</h1>
+    <p>JavaScript memungkinkan kita untuk berinteraksi dan memanipulasi elemen HTML secara dinamis menggunakan DOM.</p>
+
     <div class="box" id="colorBox"></div>
     <button onclick="changeColor()">Ubah Warna</button>
+    <button onclick="ubahUkuran()">Ubah Ukuran</button>
 
     <script>
-        // Seleksi elemen DOM dan event handling
+        // Fungsi untuk mengubah warna box
         function changeColor() {
             const box = document.getElementById('colorBox');
-            box.style.backgroundColor = box.style.backgroundColor === 'tomato' ? '#3498db' : 'tomato';
+            // Toggle warna antara skyblue dan orange
+            box.style.backgroundColor = box.style.backgroundColor === 'orange' ? 'skyblue' : 'orange';
+        }
+
+        // Fungsi untuk mengubah ukuran box
+        function ubahUkuran() {
+            const box = document.getElementById('colorBox');
+            // Toggle ukuran antara 150px dan 200px
+            box.style.width = box.style.width === '200px' ? '150px' : '200px';
+            box.style.height = box.style.height === '200px' ? '150px' : '200px';
         }
     </script>
+
 </body>
 </html>
