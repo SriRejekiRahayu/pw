@@ -16,7 +16,7 @@
         }
         button {
             padding: 10px 15px;
-            margin-right: 10px;
+            margin: 5px 10px 5px 0;
             background-color: #27ae60;
             color: white;
             border: none;
@@ -34,15 +34,23 @@
     <p>JavaScript memungkinkan kita untuk berinteraksi dan memanipulasi elemen HTML secara dinamis menggunakan DOM.</p>
 
     <div class="box" id="colorBox"></div>
+    
+    <!-- Tombol-tombol -->
     <button onclick="changeColor()">Ubah Warna</button>
     <button onclick="ubahUkuran()">Ubah Ukuran</button>
+    <br>
     <button class="reset-btn" onclick="resetBox()">Reset</button>
 
     <script>
-        // Fungsi untuk mengubah warna box
+        // Array warna untuk dipilih secara acak
+        const colors = ['skyblue', 'orange', 'tomato', 'mediumseagreen', 'violet', 'gold', 'deepskyblue', 'salmon'];
+
+        // Fungsi untuk mengubah warna acak
         function changeColor() {
             const box = document.getElementById('colorBox');
-            box.style.backgroundColor = box.style.backgroundColor === 'orange' ? 'skyblue' : 'orange';
+            // Pilih warna secara acak dari array
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            box.style.backgroundColor = randomColor;
         }
 
         // Fungsi untuk mengubah ukuran box
@@ -52,7 +60,7 @@
             box.style.height = box.style.height === '200px' ? '150px' : '200px';
         }
 
-        // Fungsi untuk reset ke kondisi awal
+        // Fungsi untuk mereset ke kondisi awal
         function resetBox() {
             const box = document.getElementById('colorBox');
             box.style.backgroundColor = 'skyblue';
