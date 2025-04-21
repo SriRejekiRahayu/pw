@@ -23,6 +23,9 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .reset-btn {
+            background-color: #e74c3c;
+        }
     </style>
 </head>
 <body>
@@ -33,21 +36,28 @@
     <div class="box" id="colorBox"></div>
     <button onclick="changeColor()">Ubah Warna</button>
     <button onclick="ubahUkuran()">Ubah Ukuran</button>
+    <button class="reset-btn" onclick="resetBox()">Reset</button>
 
     <script>
         // Fungsi untuk mengubah warna box
         function changeColor() {
             const box = document.getElementById('colorBox');
-            // Toggle warna antara skyblue dan orange
             box.style.backgroundColor = box.style.backgroundColor === 'orange' ? 'skyblue' : 'orange';
         }
 
         // Fungsi untuk mengubah ukuran box
         function ubahUkuran() {
             const box = document.getElementById('colorBox');
-            // Toggle ukuran antara 150px dan 200px
             box.style.width = box.style.width === '200px' ? '150px' : '200px';
             box.style.height = box.style.height === '200px' ? '150px' : '200px';
+        }
+
+        // Fungsi untuk reset ke kondisi awal
+        function resetBox() {
+            const box = document.getElementById('colorBox');
+            box.style.backgroundColor = 'skyblue';
+            box.style.width = '150px';
+            box.style.height = '150px';
         }
     </script>
 
