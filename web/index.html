@@ -15,10 +15,10 @@
   </div>
 
   <div class="header-text">
-    <h1>Wawan Sismadi</h1>
+    <h1>Sri Rejeki R</h1>
     <p class="subtitle">He/Him • Web Developer</p>
-    <p>Jakarta, Indonesia • <a href="https://wawan.sismadi.com">wawan.sismadi.com</a></p>
-    <p><strong>Sismadi Langit Solusi</strong> — Universitas Ahmad Dahlan</p>
+    <p>Jakarta, Indonesia • <a href="https://sri.rejeki.com">sri.rejeki.com</a></p>
+    <p><strong>sri bulan</strong> — Universitas Ipwija</p>
   </div>
 
   <div class="action-buttons">
@@ -49,8 +49,8 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 
-const SUPABASE_URL = 'https://zligkbkrxqqbetnwykrq.supabase.co'
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpsaWdrYmtyeHFxYmV0bnd5a3JxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkyNjM2ODUsImV4cCI6MjA2NDgzOTY4NX0.kDK8_c6qCKKRax4HbHwEbAMwTavhDRWdgqkDtjWWYD8'
+const SUPABASE_URL = 'https://'gminamhcbgefokwjowax
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdtaW5hbWhjYmdlZm9rd2pvd2F4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1MzEyMTksImV4cCI6MjA2NTEwNzIxOX0.m9aCvGQ6-cgU3DPPQ_5QReEZbtQ-QZoEMlEa74AwtOI'
 
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
@@ -69,7 +69,7 @@ const content = document.getElementById('content')
 
 // Fungsi load data ke tabel
 async function loadData() {
-  const { data, error } = await supabase.from('web').select('*').order('id')
+  const { data, error } = await supabase.from('web1').select('*').order('id')
   if (error) {
     alert('Error loading data: ' + error.message)
     return
